@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Palette */
+  --monster-black: #000000;
+  --monster-green: #64ff00; /* Primary */
+  --monster-green-dark: #007e02; /* Depth/Active */
+  --monster-green-light: #89ff7c; /* Hover/Glow */
+  --monster-lime: #ccdc2a; /* Secondary Accent */
+  --monster-yellow: #faef55; /* High Vis Accent */
+
+  /* Typography Variables */
+  --font-hero: "Energy Storm", sans-serif;
+  --font-header: "Lighting_Volt_1", sans-serif;
+  --font-body: "Orbitron", sans-serif;
+  --font-tech: "Bitcount", monospace;
+  --font-accent: "Dark Heart", cursive;
+  --font-feast: "Feast_of_Flesh", sans-serif;
+
+  /* Semantic Aliases */
+  --color-primary: var(--monster-green);
+  --color-primary-hover: var(--monster-green-light);
+  --color-bg: var(--monster-black);
+}
+
+/* Typography Base */
+body {
+  font-family: var(--font-body);
+  background-color: var(--monster-black);
+  color: white;
+}
+
+h1 {
+  font-family: var(--font-hero);
+  /* font-size: 5rem;  <-- REMOVED: Causing mobile sizing issues */
+  text-transform: uppercase;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-header);
+  text-transform: uppercase;
+}
+
+/* Utilities */
+.font-tech {
+  font-family: var(--font-tech);
+}
+.font-accent {
+  font-family: var(--font-accent);
+}
+.font-feast {
+  font-family: var(--font-feast);
+}
+
+@layer components {
+  .btn {
+    @apply px-8 py-3 font-bold uppercase tracking-wider transition-all duration-300 transform skew-x-[-10deg];
+    font-family: var(--font-tech);
+  }
+
+  .btn-content {
+    @apply inline-block skew-x-10; /* Counter-skew text */
+  }
+
+  .btn-primary {
+    @apply bg-(--monster-green) text-black shadow-[0_0_10px_var(--monster-green-dark)];
+  }
+
+  .btn-primary:hover {
+    @apply bg-(--monster-green-light) scale-105 shadow-[0_0_20px_var(--monster-green)];
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-(--monster-green) text-(--monster-green);
+  }
+
+  .btn-secondary:hover {
+    @apply bg-(--monster-green) text-black shadow-[0_0_15px_var(--monster-green-dark)];
+  }
+
+  .btn-accent {
+    @apply bg-(--monster-yellow) text-black;
+  }
+
+  .btn-accent:hover {
+    @apply bg-(--monster-lime) scale-105 shadow-[0_0_15px_var(--monster-yellow)];
+  }
+}
+
+@font-face {
+  font-family: "Energy Storm";
+  src: url("/fonts/StormExtrabold-R9le.ttf");
+}
+
+@font-face {
+  font-family: "Dark Heart";
+  src: url("/fonts/DarkheartScript-rXoA.otf");
+}
+
+@font-face {
+  font-family: "Lighting_Volt_1";
+  src: url("/fonts/Lightningvolt-1.otf");
+}
+
+@font-face {
+  font-family: "Lighting_Volt_2";
+  src: url("/fonts/Lightningvolt-2.ttf");
+}
+@font-face {
+  font-family: "RogenzDemo-1";
+  src: url("/fonts/RogenzDemo-1.otf");
+}
+@font-face {
+  font-family: "Bitcount";
+  src: url("/fonts/Bitcount.ttf");
+}
+@font-face {
+  font-family: "Orbitron";
+  src: url("/fonts/Orbitron.ttf");
+}
+@font-face {
+  font-family: "Feast_of_Flesh";
+  src: url("/fonts/Feast_of_Flesh_BB.ttf");
+}
